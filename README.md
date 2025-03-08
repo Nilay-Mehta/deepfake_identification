@@ -10,7 +10,7 @@ The Deepfake Identifier is a Python-based system that detects faces in images an
 - ✂️ **Extracts face regions** for analysis  
 - 🤖 **Uses deep learning** to classify faces as real or fake  
 - 🖍️ **Displays results visually** with bounding boxes  
-- ⚙️ **Supports real-time processing**  
+- ⚙️ **Supports real-time and live camera processing** to give user real time experience
 
 ---
 
@@ -38,11 +38,11 @@ python main.py
 .
 ├── face_detector.py       # Detects faces using MediaPipe
 ├── face_extractor.py      # Extracts and processes face regions
+├── live_detector.py       # Handles real-time face detection from webcam
 ├── main.py                # Manages the entire workflow
 ├── media_processor.py     # Loads and processes images/videos
 ├── model.h5               # Pre-trained deep learning model
 ├── visualizer.py          # Draws results on images/videos
-├── README.md              # Project documentation
 ```
 
 ---
