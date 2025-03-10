@@ -73,6 +73,7 @@ if __name__ == "__main__":
         print("Select an option:")
         print("1. Process media file")
         print("2. Start live tracking")
+        print("3. Exit")
         choice = input("Enter choice: ").strip()
 
         if choice == "1":
@@ -89,6 +90,10 @@ if __name__ == "__main__":
         elif choice == "2":
             tracker = LiveTracking()
             tracker.start_tracking()
+
+        elif choice == "3":
+            print("Goodbye!")
+            break
         
         else:
             print("Invalid choice. Try again.")
