@@ -16,22 +16,25 @@ class LiveTracking:
         if not self.cap.isOpened():
             print("Error: Could not open webcam")
             return
-        
+    
         print("Press 'q' to exit")
         while True:
             ret, frame = self.cap.read()
             if not ret:
                 print("Error: Could not read frame")
                 break
-            
+        
             faces = self.face_detector.detect_faces(frame)
-            output_frame = self.visualizer.draw_faces(frame, faces, [1.0] * len(faces), padding=0.0, conf=0.5)
-            
+        
+            # Pass an empty list to remove text but keep boxes
+            output_frame = self.visualizer.draw_faces(frame, faces, [], padding=0.0, conf=0.5)
+        
             cv2.imshow("Live Face Tracking", output_frame)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
-        
+    
         self.cleanup()
+
     
     def cleanup(self):
         """Release resources"""
